@@ -6,7 +6,7 @@ router.get('/', function (req, res) {
   // render manda a renderizar (generar y entregar)
   // la vista al cliente
   // Calculando
-  let emojieDataset = ['💻', '👨‍💻', '🎈', '🎄','🦺','🎢','🎁'];
+  let emojieDataset = ['💻', '👨‍💻', '🎈', '🎄','🦺','🎢','🎁','🚆','🌍','♥'];
   let emojie = emojieDataset[Math.floor(Math.random() * emojieDataset.length)];
   res.render('index',
     // Este es el View-Model
