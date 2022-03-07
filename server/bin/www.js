@@ -4,24 +4,26 @@
  * Module dependencies.
  */
 
-// var app = require('../app');
-import app from '../app';
-var debug = require('debug')('projnotes-2022a:server');
-var http = require('http');
+import app from "../app";
+import Debug from "debug";
+import http from "http";
+
+// Creando instancia del debugger
+const debug = Debug("projnotes-2022a:server");
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || "3000");
 // app es una instnacia de ExpressJs[ ] [ NODE ]
-app.set('port', port);
+app.set("port", port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app); // (req, res, next, err)=> {}
+const server = http.createServer(app); // (req, res, next, err)=> {}
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -29,15 +31,15 @@ var server = http.createServer(app); // (req, res, next, err)=> {}
 
 server.listen(port); // Pone al server a escuchar
 // Se registran eventos
-server.on('error', onError); // En caso de error
-server.on('listening', onListening); // Cuando esta escuchando
+server.on("error", onError); // En caso de error
+server.on("listening", onListening); // Cuando esta escuchando
 
 /**
  * Normalize a port into a number, string, or false.
  */
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  const port = parseInt(val, 10);
 
   if (isNaN(port)) {
     // named pipe
@@ -57,22 +59,20 @@ function normalizePort(val) {
  */
 
 function onError(error) {
-  if (error.syscall !== 'listen') {
+  if (error.syscall !== "listen") {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof port === "string" ? "Pipe " + port : "Port " + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+    case "EACCES":
+      console.error(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+    case "EADDRINUSE":
+      console.error(`${bind} is already in use`);
       process.exit(1);
       break;
     default:
@@ -85,10 +85,8 @@ function onError(error) {
  */
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-  console.log(`✍ Servidor escuchando 🤖🦻...en ${app.get('port')}`);
+  const addr = server.address();
+  const bind = typeof addr === "string" ? `pipe ${addr}` : `port ${addr.port}`;
+  debug(`Listening on ${bind}`);
+  console.log(`✍ Servidor escuchando 🤖🦻...en ${app.get("port")}`);
 }
