@@ -1,14 +1,4 @@
-version: "3.9"
+version: "3"
 services: 
   projnotes-image:
     build: .
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./:/app
-      - /app/node_modules
-    environment:
-      - PORT=3000
-    # Alternativa para usar archivo
-    # env_file:
-    #   - ./.env

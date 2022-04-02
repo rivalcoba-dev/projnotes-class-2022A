@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
     // Este es el View-Model
     {
     title: 'Express',
-    author: 'Areli Garcia',
+    author: 'Ivan Rivalcoba',
     emojie 
   });
 });
