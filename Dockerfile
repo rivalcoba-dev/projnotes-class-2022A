@@ -1,5 +1,5 @@
 FROM node:14.16.1
-WORKDIR /projnotes-2022a
+WORKDIR /app
 COPY package.json .
 RUN npm install
 COPY . ./
