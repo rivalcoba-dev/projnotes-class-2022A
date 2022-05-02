@@ -1,19 +1,19 @@
 // Importar Express
-var express = require("express");
+const express = require('express');
 // Importamos el enrutador de express
-var router = express.Router();
+const router = express.Router();
 
 /* GET home page. */
-router.get("/", function (req, res) {
+router.get('/', (req, res) => {
   // render manda a renderizar (generar y entregar)
 
   res.render(
-    "about",
+    'about',
     // Este es el View-Model
     {
-      name: "Ivan Rivalcoba",
-      email: "jorge.rr@gamadero.tecnm.mx",
-      url: "www.itgam.com/rivalcoba"
+      name: 'Ivan Rivalcoba',
+      email: 'jorge.rr@gamadero.tecnm.mx',
+      url: 'www.itgam.com/rivalcoba',
     }
   );
 });
