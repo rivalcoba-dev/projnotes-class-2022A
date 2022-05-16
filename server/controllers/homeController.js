@@ -30,6 +30,9 @@ const about = (req, res) => {
     name: 'PhD Ivan Rivalcoba',
     email: 'jorge.rr@gamadero.tecnm.mx',
     url: 'https://github.com/rivalcoba-dev',
+    description:
+      'Aplicación que te permite registrar ideas de proyectos. PwpcII-2022A',
+    version: '0.0.alpha',
   });
 };
 
