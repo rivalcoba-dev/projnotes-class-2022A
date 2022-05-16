@@ -24,7 +24,17 @@ const index = (req, res) => {
   res.render('index', viewModel);
 };
 
+// URL: Get /about
+const about = (req, res) => {
+  res.render('home/aboutView', {
+    name: 'PhD Ivan Rivalcoba',
+    email: 'jorge.rr@gamadero.tecnm.mx',
+    url: 'https://github.com/rivalcoba-dev',
+  });
+};
+
 export default {
   // Action Methods
   index,
+  about,
 };
