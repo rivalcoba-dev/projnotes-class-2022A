@@ -2,3 +2,13 @@ version: "3"
 services: 
   projnotes-image:
     build: .
+
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=projnotes
+      - MONGO_INITDB_ROOT_PASSWORD=123123
+    volumes:
+      - mongo-db:/data/db
+volumes:
+  mongo-db:
