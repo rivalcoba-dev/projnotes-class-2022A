@@ -10,6 +10,9 @@ import cookieParser from "cookie-parser";
 // Maneja el log de peticiones http
 import logger from "morgan";
 
+// Importando la base de datos
+import connectToDatabse from "./config/connectToDatabse";
+
 // Las rutas
 import indexRouter from "./routes/index";
 import usersRouter from "./routes/users";
@@ -37,6 +40,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/about", aboutRouter);
+
+// Conectado a la base de datos
+connectToDatabse();
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
