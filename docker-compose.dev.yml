@@ -9,4 +9,10 @@ services:
     environment:
       - PORT=3000
       - NODE_ENV=development
+      - MONGO_USER=projnotes
+      - MONGO_PASSWORD=123123
     command: npm run dev
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=projnotes
+      - MONGO_INITDB_ROOT_PASSWORD=123123
